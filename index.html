@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Document & Resource Hub | Get it Done Right</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Lora', serif; 
+            scroll-behavior: smooth;
+            background-color: #FDFBF8; /* Soft cream background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(20, 25, 30, 0.85), rgba(20, 25, 30, 0.85)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10 H70 Q85 10 85 25 V75 Q85 90 70 90 H20 V10 Z" fill="#111827"/>
+                    <path d="M40 25 H55 V42 H70 V58 H55 V75 H40 V58 H25 V42 H40 V25 Z" fill="#FFFFFF"/>
+                    <path d="M58 65 L65 72 L80 57" stroke="#14b8a6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span class="font-bold text-xl text-gray-800">The Document & Resource Hub</span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-gray-600 hover:text-teal-600 font-semibold text-lg">Services</a>
+                <a href="#why-us" class="text-gray-600 hover:text-teal-600 font-semibold text-lg">Why Us</a>
+                <a href="#contact" class="bg-teal-500 text-white px-5 py-2 rounded-full hover:bg-teal-600 font-bold transition-transform duration-300 hover:scale-105">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                 <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-32 md:py-40 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight">Get it Done Right.<br>The First Time.</h1>
+            <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">Expert help for government applications, academic projects, and professional job applications. We save you time, stress, and the run-around.</p>
+            <a href="#services" class="mt-10 inline-block bg-teal-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-teal-600 transition-transform duration-300 hover:scale-105 shadow-lg">Discover Our Services</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar Section -->
+    <section id="trust-bar" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="fade-in-up">
+                    <div class="stat-number text-teal-600" data-target="100">0</div>
+                    <p class="text-lg font-semibold text-gray-700 mt-2">100% Confidentiality Guarantee</p>
+                    <p class="text-gray-500">Your personal data is always safe and secure with us.</p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 150ms;">
+                     <div class="stat-number text-teal-600" data-target="99">0</div>
+                     <p class="text-lg font-semibold text-gray-700 mt-2">99% Document Accuracy</p>
+                     <p class="text-gray-500">We meticulously check every detail to prevent errors.</p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 300ms;">
+                     <div class="stat-number text-teal-600" data-target="50">0</div>
+                     <p class="text-lg font-semibold text-gray-700 mt-2">50+ Services & Forms</p>
+                     <p class="text-gray-500">A comprehensive range of solutions for your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold">Our Core Services</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">We provide the professional support you need for life's most important documents.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center transition-all duration-300 fade-in-up">
+                    <div class="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-passport text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Gov't Application Prep & Pack</h3>
+                    <p class="text-gray-600">Expert preparation for RGD, NHT, Passport, NHF applications and more. We handle the details so you don't have to.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center transition-all duration-300 fade-in-up" style="transition-delay: 150ms;">
+                    <div class="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-tie text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Job Application Package</h3>
+                    <p class="text-gray-600">A complete service to build your professional profile. Includes a skills consultation, resume writing, and a tailored cover letter.</p>
+                </div>
+                 <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center transition-all duration-300 fade-in-up" style="transition-delay: 300ms;">
+                    <div class="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">SBA Technical Support</h3>
+                    <p class="text-gray-600">Specialized help for students with professional formatting, citation checks, and final presentation of CSEC & CAPE projects.</p>
+                </div>
+                <!-- Service Card 4 -->
+                 <div class="service-card bg-white rounded-xl shadow-lg p-8 text-center transition-all duration-300 fade-in-up" style="transition-delay: 450ms;">
+                    <div class="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Teacher's Finishing Touch</h3>
+                    <p class="text-gray-600">High-quality laminating, binding, and premium printing to make your classroom resources durable and professional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 fade-in-up">
+                    <img src="6F21BA59-5EAA-4220-82F7-821260EDBDB7.jpg" alt="A professional and friendly administrative specialist" class="rounded-xl shadow-2xl w-full">
+                </div>
+                <div class="md:w-1/2 fade-in-up" style="transition-delay: 150ms;">
+                    <h2 class="text-4xl md:text-5xl font-bold">Expert Guidance You Can Trust</h2>
+                    <p class="text-gray-600 mt-6 text-lg leading-relaxed">My name is [Your Name], and I'm an administrative specialist with extensive experience as an OEC Examination Supervisor. I understand the importance of accuracy and confidentiality. My mission is to provide a professional, non-judgmental, and supportive environment where you can feel confident that your important documents are in expert hands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="bg-gray-800 text-white py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold">Ready to Get Started?</h2>
+            <p class="text-gray-300 mt-4 max-w-xl mx-auto text-lg">Contact us today to book your appointment or to ask any questions. We're here to help.</p>
+            <a href="tel:18765551234" class="mt-10 inline-block bg-teal-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-teal-600 transition-transform duration-300 hover:scale-105 shadow-lg">Call or Message Us: (876) 555-1234</a>
+        </div>
+        <div class="text-center text-gray-500 mt-20 border-t border-gray-700 pt-8">
+            &copy; 2025 The Document & Resource Hub. All Rights Reserved. | 15 Hope Road, Kingston 6
+        </div>
+    </footer>
+
+<script>
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    faders.forEach(fader => {
+        observer.observe(fader);
+    });
+
+    // Counter animation
+    const stats = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            
+            const target = entry.target;
+            const finalValue = parseInt(target.getAttribute('data-target'));
+            let start = 0;
+            const duration = 2000;
+            const stepTime = Math.abs(Math.floor(duration / finalValue));
+
+            const timer = setInterval(() => {
+                start += 1;
+                target.textContent = start + '%';
+                if (start === finalValue) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+            
+            observer.unobserve(target);
+        });
+    }, { threshold: 0.7 });
+
+    stats.forEach(stat => {
+        statsObserver.observe(stat);
+    });
+</script>
+
+</body>
+</html>
+
