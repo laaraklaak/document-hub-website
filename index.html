@@ -12,7 +12,12 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background-color: #0d1b2a; /* Deep Navy */
+            background-color: #0d1b2a; /* Fallback for browsers that don't support gradients */
+            /* The elegant background image with a dark, on-brand overlay */
+            background-image: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates a nice parallax effect */
         }
         .accent-bg {
             background-color: #00b4d8; /* Bright Cyan */
@@ -93,7 +98,7 @@
     <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center accent-text mb-12">Our Core Services</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Core Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
@@ -126,7 +131,7 @@
     <!-- How It Works Section -->
     <section class="bg-white py-20">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center accent-text mb-12">Our Simple Hybrid Process</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Simple Hybrid Process</h2>
             <div class="flex flex-col md:flex-row items-center md:space-x-12">
                 <div class="md:w-1/2 mb-8 md:mb-0 fade-in-section">
                     <img src="https://placehold.co/600x400/00b4d8/ffffff?text=Digital+Coordination" alt="Diagram showing a digital workflow" class="rounded-lg shadow-2xl">
@@ -176,12 +181,12 @@
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
                 <p class="text-gray-300 mb-8">Contact us on WhatsApp to begin your task. Our team is ready to help.</p>
-                <a href="https://wa.me/18768027876" target="_blank" class="accent-bg text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-105">
+                <a href="https://wa.me/1876XXXXXXX" target="_blank" class="accent-bg text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-105">
                     Start a Task on WhatsApp
                 </a>
                 <div class="mt-10 text-gray-400">
-                    <p>St. Catherine, Jamaica</p>
-                    <p>info@docuhubja.com</p>
+                    <p>Linstead, St. Catherine, Jamaica</p>
+                    <p>documenthubja.com</p>
                 </div>
             </div>
         </div>
@@ -193,7 +198,7 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1876XXXXXXX" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/18768027876" target="_blank" class="whatsapp-float">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0012.053 3c-4.948 0-8.976 4.027-8.976 8.974 0 1.582.413 3.126 1.198 4.488L3 21l4.629-1.224a8.948 8.948 0 004.424 1.196h.001c4.947 0 8.975-4.027 8.975-8.974 0-2.393-.936-4.65-2.625-6.342zM12.053 19.907h-.001a7.446 7.446 0 01-3.79-1.044l-.273-.162-2.824.741.753-2.753-.177-.289a7.448 7.448 0 01-1.141-3.971c0-4.102 3.337-7.44 7.44-7.44a7.425 7.425 0 015.263 2.182 7.425 7.425 0 012.183 5.26c0 4.102-3.337 7.44-7.44 7.44zm4.088-5.564c-.22-.11-.942-.465-1.09-.517-.148-.052-.255-.08-.363.081-.108.161-.413.517-.507.624-.094.108-.188.12-.347.041-.16-.08-.677-.248-1.289-.791-.476-.423-.799-.944-.893-1.103-.094-.159-.01-.244.07-.323.071-.071.16-.188.239-.282.079-.094.106-.159.16-.266.052-.108.026-.201-.013-.282-.04-.081-.363-.87-.495-1.198-.131-.328-.263-.282-.363-.287-.094-.005-.201-.005-.309-.005s-.282.04-.431.201c-.148.161-.578.56-..578 1.372 0 .812.592 1.592.677 1.709.085.117 1.173 1.789 2.846 2.51.396.171.705.275.942.352.289.094.55.081.753.052.22-.03.677-.275.772-.544.094-.27.094-.499.066-.544-.027-.04-.094-.066-.214-.117z"></path></svg>
     </a>
 
@@ -214,6 +219,12 @@
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+            });
+            // Close mobile menu when a link is clicked
+             document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
 
             // Scroll animations
