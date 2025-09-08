@@ -1,310 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Document & Resource Hub - Get it Done Right.</title>
+    <title>The Document & Resource Hub - Get it Done Right</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF; /* Crisp White Background */
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
         }
         .hero-bg {
-            background-color: #0d1b2a; /* Fallback for browsers that don't support gradients */
-            /* The elegant background image with a dark, on-brand overlay */
-            background-image: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80');
+            background-image: linear-gradient(rgba(0, 28, 56, 0.7), rgba(0, 28, 56, 0.7)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Creates a nice parallax effect */
+            background-attachment: fixed;
         }
-        .accent-bg {
-            background-color: #00b4d8; /* Bright Cyan */
+        .footer-bg {
+            background-image: linear-gradient(rgba(0, 28, 56, 0.85), rgba(0, 28, 56, 0.85)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        .accent-text {
-            color: #00b4d8; /* Bright Cyan */
+        /* --- EXPERT UPGRADE: Enhanced Text Readability on Dark Backgrounds --- */
+        .hero-bg h1, .footer-bg h2, #contact h2 {
+            color: #FFFFFF; /* Pure white for headings */
+            text-shadow: 0px 1px 3px rgba(0,0,0,0.6), 0px 0px 1px rgba(0,0,0,0.8);
         }
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s;
+        .hero-bg p, .footer-bg p, #contact p, .footer-bg {
+            color: #f1f5f9; /* Brighter, clearer off-white for body text */
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.8);
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        /* Style for scroll animations */
-        .fade-in-section {
+        .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .fade-in-section.is-visible {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+        .counter-value {
+            transition: all 1.5s ease-out;
+        }
     </style>
 </head>
-
-<body class="bg-gray-100">
+<body class="text-slate-700">
 
     <!-- Header -->
-    <header class="hero-bg text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold">
-                <span class="accent-text">Docu</span>Hubja
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                 <svg class="h-10 w-10 text-slate-800" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10 H70 Q85 10 85 25 V75 Q85 90 70 90 H20 V10 Z" fill="#1e2d3b"/>
+                    <path d="M40 25 H55 V42 H70 V58 H55 V75 H40 V58 H25 V42 H40 V25 Z" fill="#FFFFFF"/>
+                    <path d="M58 65 L65 72 L80 57" stroke="#14b8a6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span class="font-bold text-xl text-slate-800">The Document Hub</span>
             </div>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#services" class="hover:text-gray-300">Services</a>
-                <a href="#why-us" class="hover:text-gray-300">Why Us</a>
-                <a href="#about" class="hover:text-gray-300">About Us</a>
-                <a href="#contact" class="accent-bg text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-opacity-90 transition">Start Your Task</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
-            <a href="#why-us" class="block py-2 px-4 text-sm hover:bg-gray-700">Why Us</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About Us</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Start Your Task</a>
-        </div>
+            <a href="#contact" class="bg-teal-500 text-white font-bold py-2 px-6 rounded-full hover:bg-teal-600 transition duration-300">Contact Us</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-20">
+    <section class="hero-bg py-20 md:py-32">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Professional Documents, Made Simple.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">From government applications to job-winning resumes, we handle the details so you can focus on your goals. Get it done right. The first time.</p>
-            <a href="#contact" class="accent-bg text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-105">Start a Task on WhatsApp</a>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Get it Done Right.<br>The First Time.</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">Expert help for government applications, NIS support, and professional job applications. We handle the details, so you can focus on what's next.</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
+    <!-- Trust Bar -->
+    <section class="bg-slate-800 text-white py-12">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Core Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
-                    <div class="accent-bg text-white rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Gov't Application Prep</h3>
-                    <p class="text-gray-600">We prepare your TRN, NIS, and PATH applications, ensuring all forms are filled correctly and all required documents are in order for submission.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center" id="trust-bar">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-teal-400 mb-2 counter" data-target="100">0</h2>
+                    <p class="text-slate-300 font-semibold">% Accuracy Focus</p>
                 </div>
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
-                    <div class="accent-bg text-white rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Job Application Packages</h3>
-                    <p class="text-gray-600">Land your next job with a professional resume and cover letter. We craft documents that highlight your skills and help you stand out to employers.</p>
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-teal-400 mb-2 counter" data-target="95">0</h2>
+                    <p class="text-slate-300 font-semibold">% Client Satisfaction</p>
                 </div>
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
-                    <div class="accent-bg text-white rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20M1 12v7a2 2 0 002 2h18a2 2 0 002-2v-7"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">SBA Technical Support</h3>
-                    <p class="text-gray-600">For CSEC & CAPE students. We provide professional typing, formatting, and printing for your School Based Assessments to meet exam standards.</p>
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-teal-400 mb-2 counter" data-target="1000">0</h2>
+                    <p class="text-slate-300 font-semibold">+ Hours Saved for Clients</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="py-20 bg-white">
+    <!-- Core Services -->
+    <section class="py-20" id="services">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Why Our Clients Trust Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <!-- Stat 1: Accuracy -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg fade-in-section">
-                    <div class="accent-text text-6xl font-extrabold mb-2" data-target="99.5">0</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Document Accuracy</h3>
-                    <p class="text-gray-600">Our meticulous review process, born from years of banking precision, ensures an exceptionally high first-time approval rate for official applications.</p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Your Year-Round Support</h2>
+                <p class="text-slate-600 mt-2">Core services for your most important needs, available anytime.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Passport -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-passport text-3xl text-slate-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Passport Renewal Prep & Pack</h3>
+                    <p class="text-slate-600">Avoid rejection. We ensure your forms and photos meet PICA's strict standards.</p>
                 </div>
-                <!-- Stat 2: Speed -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg fade-in-section">
-                     <div class="accent-text text-6xl font-extrabold mb-2" data-target="24">0</div>
-                     <h3 class="text-xl font-bold text-gray-800 mb-2">Hour Draft Turnaround</h3>
-                     <p class="text-gray-600">We respect your time. For most Tier 2 services, you will receive your initial draft for review within one business day.</p>
+                <!-- Service Card 2: NHF -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col items-center text-center">
+                     <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-clinic-medical text-3xl text-slate-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">NHF Application Support</h3>
+                    <p class="text-slate-600">Managing an illness is hard enough. Let us handle the NHF paperwork for you, fast and accurately.</p>
                 </div>
-                <!-- Stat 3: Experience -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg fade-in-section">
-                     <div class="accent-text text-6xl font-extrabold mb-2" data-target="14">0</div>
-                     <h3 class="text-xl font-bold text-gray-800 mb-2">Years of Experience</h3>
-                     <p class="text-gray-600">Our founder's background in the financial sector provides the foundation for our commitment to confidentiality, accuracy, and professionalism.</p>
+                <!-- Service Card 3: NIS -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col items-center text-center">
+                     <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-shield-alt text-3xl text-slate-500"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">NIS Support Services</h3>
+                    <p class="text-slate-600">Expert guidance to secure your future. We help with self-employed compliance, protecting your pension, and benefit applications.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- How It Works Section -->
-    <section class="bg-gray-50 py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Simple Hybrid Process</h2>
-            <div class="flex flex-col md:flex-row items-center md:space-x-12">
-                <div class="md:w-1/2 mb-8 md:mb-0 fade-in-section">
-                    <img src="https://placehold.co/600x400/00b4d8/ffffff?text=Digital+Coordination" alt="Diagram showing a digital workflow" class="rounded-lg shadow-2xl">
+    <!-- Seasonal Offerings Section -->
+    <section class="bg-slate-50 py-20">
+         <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Our Seasonal Specialties</h2>
+                <p class="text-slate-600 mt-2">Look out for our specialized support during peak seasons!</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Service 4: NHT -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-hand-holding-usd text-3xl text-blue-500"></i></div>
+                    <h3 class="font-bold text-lg text-slate-800">NHT Refund Applications</h3>
+                    <p class="text-sm text-slate-600"><span class="font-semibold bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">PEAK SEASON: JAN - APR</span><br class="mt-2">Don't leave your money on the table. We handle the online process to ensure you get your refund without errors.</p>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="flex items-start mb-6 fade-in-section">
-                        <div class="accent-bg text-white font-black text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">1</div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Start on WhatsApp</h3>
-                            <p class="text-gray-600">Contact us via WhatsApp to start your service. We'll consult with you and gather all the necessary information and documents digitally.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start mb-6 fade-in-section">
-                        <div class="accent-bg text-white font-black text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">2</div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">We Prepare the Documents</h3>
-                            <p class="text-gray-600">Our remote specialists get to work drafting, formatting, and perfecting your documents. We'll send you a digital draft for your final approval.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start fade-in-section">
-                        <div class="accent-bg text-white font-black text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">3</div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Print & Collect In-Store</h3>
-                            <p class="text-gray-600">Once you approve the final version, we print and package your documents. We'll notify you when they are ready for quick and easy collection at our office.</p>
-                        </div>
-                    </div>
+                <!-- Service 5: SBA -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-graduation-cap text-3xl text-purple-500"></i></div>
+                    <h3 class="font-bold text-lg text-slate-800">SBA Technical Support</h3>
+                    <p class="text-sm text-slate-600"><span class="font-semibold bg-purple-200 text-purple-800 px-2 py-1 rounded-full text-xs">PEAK SEASON: JAN - MAR</span><br class="mt-2">Secure your Grade 1. We provide expert help with formatting, citations, and professional presentation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About the Founder Section -->
-    <section id="about" class="hero-bg text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Built on a Foundation of Trust</h2>
-            <div class="max-w-3xl mx-auto fade-in-section">
-                <p class="text-lg md:text-xl text-gray-300">
-                    Before launching The Document & Resource Hub, our founder spent over 14 years in the Jamaican banking industry. That experience taught us the value of precision, confidentiality, and getting things right the first time. We built this business on the same principles of trust and accuracy that you'd expect from your bank. When you work with us, you're not just getting a service; you're getting the peace of mind that comes from proven professional experience.
-                </p>
+    <!-- How It Works Section -->
+     <section class="py-20" id="process">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Simple, Clear & Professional</h2>
+                <p class="text-slate-600 mt-2">Our process is designed for your convenience and peace of mind.</p>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="fade-in">
+                    <div class="bg-teal-500 text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-slate-800 mt-4 mb-2">Book Your Spot</h3>
+                    <p class="text-slate-600">Our high-value services are by appointment to guarantee quality. Walk-ins are welcome for quick services like printing.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="fade-in">
+                     <div class="bg-slate-800 text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-slate-800 mt-4 mb-2">Expert Preparation</h3>
+                    <p class="text-slate-600">Our hybrid team works seamlessly. The remote team prepares your documents, and the in-office team provides the final professional finish.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="fade-in">
+                     <div class="bg-teal-500 text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-slate-800 mt-4 mb-2">Collect with Confidence</h3>
+                    <p class="text-slate-600">We'll notify you via WhatsApp the moment your package is ready for a quick and easy pickup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="footer-bg py-20" id="about">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                 <h2 class="text-4xl font-bold mb-4">Your Partner in Professionalism</h2>
+                 <div class="max-w-3xl mx-auto">
+                    <p class="mb-4">After more than 14 years in the Jamaican banking sector, I saw the same story over and over: talented, hardworking people missing out on opportunities simply because they were overwhelmed by the paperwork. I saw the confusion, the frustration of waiting in long lines, and the stress of trying to navigate complex forms.</p>
+                    <p>I started The Document & Resource Hub because I've been there. I know what it's like to put off updating a passport or an NIS record because you just don't know where to start. This business comes from the heart. It's built on a foundation of expertise, confidentiality, and a genuine desire to be the resource I wished I had. We are not just a service; we are your dedicated partner, here to help you navigate life's most important documents with confidence.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-slate-800 text-white py-20" id="contact">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p class="max-w-xl mx-auto mb-8">Stop stressing and start moving forward. Send us a message on WhatsApp, and our remote team will guide you through the next steps.</p>
+            <a href="https://wa.me/18765551234?text=Hello!%20I'm%20interested%20in%20your%20services." target="_blank" class="bg-teal-500 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-teal-600 transition duration-300 inline-block">
+                Message Us on WhatsApp
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="hero-bg text-white border-t border-gray-700">
-        <div class="container mx-auto px-6 py-10">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-                <p class="text-gray-300 mb-8">Contact us on WhatsApp to begin your task. Our team is ready to help.</p>
-                <a href="https://wa.me/18768027876" target="_blank" class="accent-bg text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl hover:bg-opacity-90 transition transform hover:scale-105">
-                    Start a Task on WhatsApp
-                </a>
-                <div class="mt-10 text-gray-400">
-                    <p>Linstead, St. Catherine, Jamaica</p>
-                    <p>docuhubja.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="bg-black bg-opacity-20 py-4">
-            <div class="container mx-auto px-6 text-center text-sm text-gray-500">
-                &copy; 2025 The Document & Resource Hub. All Rights Reserved.
-            </div>
+    <footer class="footer-bg py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 The Document & Resource Hub. All Rights Reserved.</p>
+            <p class="text-xs mt-2">15 Hope Road, Kingston 6, Jamaica</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1876XXXXXXX" target="_blank" class="whatsapp-float">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0012.053 3c-4.948 0-8.976 4.027-8.976 8.974 0 1.582.413 3.126 1.198 4.488L3 21l4.629-1.224a8.948 8.948 0 004.424 1.196h.001c4.947 0 8.975-4.027 8.975-8.974 0-2.393-.936-4.65-2.625-6.342zM12.053 19.907h-.001a7.446 7.446 0 01-3.79-1.044l-.273-.162-2.824.741.753-2.753-.177-.289a7.448 7.448 0 01-1.141-3.971c0-4.102 3.337-7.44 7.44-7.44a7.425 7.425 0 015.263 2.182 7.425 7.425 0 012.183 5.26c0 4.102-3.337 7.44-7.44 7.44zm4.088-5.564c-.22-.11-.942-.465-1.09-.517-.148-.052-.255-.08-.363.081-.108.161-.413.517-.507.624-.094.108-.188.12-.347.041-.16-.08-.677-.248-1.289-.791-.476-.423-.799-.944-.893-1.103-.094-.159-.01-.244.07-.323.071-.071.16-.188.239-.282.079-.094.106-.159.16-.266.052-.108.026-.201-.013-.282-.04-.081-.363-.87-.495-1.198-.131-.328-.263-.282-.363-.287-.094-.005-.201-.005-.309-.005s-.282.04-.431.201c-.148.161-.578.56-..578 1.372 0 .812.592 1.592.677 1.709.085.117 1.173 1.789 2.846 2.51.396.171.705.275.942.352.289.094.55.081.753.052.22-.03.677-.275.772-.544.094-.27.094-.499.066-.544-.027-.04-.094-.066-.214-.117z"></path></svg>
-    </a>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+        // Fade-in animations
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, { threshold: 0.1 });
+        fadeInElements.forEach(el => observer.observe(el));
 
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            // Close mobile menu when a link is clicked
-             document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const trustBar = document.getElementById('trust-bar');
 
-            // Scroll animations & Counter
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        
-                        // Check for counters within the visible section
-                        const counters = entry.target.querySelectorAll('[data-target]');
-                        counters.forEach(counter => {
-                            if (!counter.classList.contains('animated')) {
-                                const target = +counter.getAttribute('data-target');
-                                let count = 0;
-                                
-                                const updateCount = () => {
-                                    const increment = target / 100; // Animation speed
-                                    
-                                    if (count < target) {
-                                        count += increment;
-                                        if (target % 1 !== 0) { // Handle decimals
-                                            counter.innerText = count.toFixed(1);
-                                        } else {
-                                            counter.innerText = Math.ceil(count);
-                                        }
-                                        requestAnimationFrame(updateCount);
-                                    } else {
-                                        counter.innerText = target;
-                                        // Add percentage or plus sign if specified
-                                        if (counter.dataset.suffix) {
-                                            counter.innerText += counter.dataset.suffix;
-                                        }
-                                    }
-                                };
-                                updateCount();
-                                counter.classList.add('animated');
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        let count = 0;
+                        const updateCount = () => {
+                            const increment = target / 100;
+                            if (count < target) {
+                                count += increment;
+                                counter.innerText = Math.ceil(count);
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                counter.innerText = target;
                             }
-                        });
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                observer.observe(section);
+                        };
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, { threshold: 0.5 });
+        
+        if (trustBar) {
+            counterObserver.observe(trustBar);
+        }
     </script>
-
 </body>
-
 </html>
-
 
 
