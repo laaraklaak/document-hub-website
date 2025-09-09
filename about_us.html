@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Document & Resource Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .footer-bg {
+            background-image: linear-gradient(rgba(0, 28, 56, 0.85), rgba(0, 28, 56, 0.85)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+         .footer-bg p, .footer-bg a {
+            color: #f1f5f9;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <a href="index.html" class="flex items-center space-x-2">
+                 <svg class="h-10 w-10 text-slate-800" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10 H70 Q85 10 85 25 V75 Q85 90 70 90 H20 V10 Z" fill="#1e293b"/>
+                    <path d="M40 25 H55 V42 H70 V58 H55 V75 H40 V58 H25 V42 H40 V25 Z" fill="#FFFFFF"/>
+                    <path d="M58 65 L65 72 L80 57" stroke="#14b8a6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span class="font-bold text-xl text-slate-800">The Document Hub</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-slate-600 hover:text-teal-500 font-semibold">Home</a>
+                <a href="index.html#services" class="text-slate-600 hover:text-teal-500 font-semibold">Services</a>
+                <a href="index.html#contact" class="bg-teal-500 text-white font-bold py-2 px-6 rounded-full hover:bg-teal-600 transition duration-300">Contact Us</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-slate-600 font-semibold">Home</a>
+            <a href="index.html#services" class="block py-2 text-slate-600 font-semibold">Services</a>
+            <a href="index.html#contact" class="block mt-2 bg-teal-500 text-white text-center font-bold py-2 px-6 rounded-full">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Section 1: The Story -->
+    <section class="bg-slate-50 py-20" id="story">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                 <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Our Story: Why We're Here</h1>
+                 <div class="max-w-3xl mx-auto">
+                    <p class="text-slate-600 mb-4 leading-relaxed">After more than 14 years in the Jamaican banking sector, I saw the same story over and over: talented, hardworking people missing out on opportunities simply because they were overwhelmed by the paperwork. I saw the confusion, the frustration of waiting in long lines, and the stress of trying to navigate complex forms.</p>
+                    <p class="text-slate-600 leading-relaxed">I started The Document & Resource Hub because I've been there. I know what it's like to put off updating a passport or an NIS record because you just don't know where to start. This business comes from the heart. It's built on a foundation of expertise, confidentiality, and a genuine desire to be the resource I wished I had. We are not just a service; we are your dedicated partner, here to help you navigate life's most important documents with confidence.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: The Promise -->
+    <section class="py-20" id="promise">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">Our Promise to You</h2>
+                <p class="text-slate-600 mt-2">Our entire process is built on three core values.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
+                <div class="border p-8 rounded-lg">
+                    <i class="fas fa-check-double text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-800">Accuracy</h3>
+                    <p class="text-slate-600 mt-2">We operate on the "Expert Path." Every application is meticulously prepared and double-checked to ensure it's done right, the first time.</p>
+                </div>
+                 <div class="border p-8 rounded-lg">
+                    <i class="fas fa-lock text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-800">Confidentiality</h3>
+                    <p class="text-slate-600 mt-2">Your sensitive information is protected under our "Fort Knox" policy, using secure digital practices and locked physical storage.</p>
+                </div>
+                 <div class="border p-8 rounded-lg">
+                    <i class="fas fa-hands-helping text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-800">Empathy</h3>
+                    <p class="text-slate-600 mt-2">We've been in your shoes. We provide a supportive, non-judgmental service designed to turn your stress into confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Proof (Testimonials) -->
+    <section class="bg-slate-50 py-20" id="proof">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-slate-800">The Proof: What Our Clients Say</h2>
+            <div class="mt-8 border-2 border-dashed border-slate-300 rounded-lg p-12 text-center">
+                <i class="fas fa-comments text-5xl text-slate-400 mb-4"></i>
+                <p class="text-slate-500 font-semibold">Client Testimonials Coming Soon!</p>
+                <p class="text-slate-400 mt-2">We're just getting started and are busy collecting feedback. We can't wait to share our clients' success stories here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-6">
+        <div class="container mx-auto px-6 text-center">
+             <div class="mb-4">
+                <a href="index.html" class="mx-3 hover:text-white">Home</a>
+                <a href="about.html" class="mx-3 hover:text-white">About Us</a>
+                <a href="index.html#services" class="mx-3 hover:text-white">Services</a>
+            </div>
+            <p>&copy; 2025 The Document & Resource Hub. All Rights Reserved.</p>
+            <p class="text-xs mt-2">Linstead, St. Catherine, Jamaica</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
